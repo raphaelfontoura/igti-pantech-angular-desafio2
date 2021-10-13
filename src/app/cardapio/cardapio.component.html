@@ -1,0 +1,12 @@
+<h1>Cardápio</h1>
+<ul>
+  <span>carrinho: {{quantidadeCarrinho}}</span>
+  <li><a routerLink="/pedido" >Pedido</a></li>
+</ul>
+
+<table>
+  <tr *ngFor="let produto of produtos" (click)="adicionaPedido(produto)">
+    <td>{{produto.descricao}}</td>
+    <td>R$ {{produto.preco | number: "1.2-2"}}</td>
+  </tr>
+</table>

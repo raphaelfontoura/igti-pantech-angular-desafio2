@@ -1,0 +1,17 @@
+<h1>Pedido</h1>
+
+<table>
+  <tr *ngFor="let pedido of pedidos">
+    <td>{{pedido.item.descricao}}</td>
+    <td>{{pedido.quantidade}} x {{pedido.item.preco}}</td>
+  </tr>
+</table>
+
+<div>
+  <span>Total:</span>
+  <span>R$ {{total | number:"1.2-2"}}</span>
+</div>
+
+<button routerLink="/cardapio">Incluir mais itens</button>
+<button (click)="limparCarrinho()">Limpar</button>
+<button>Concluir</button>
