@@ -14,4 +14,5 @@ export class ProdutosService {
   listProdutos() {
     return this.http.get<Produto[]>(`${urlBase}/cardapio`);
   }
+
 }

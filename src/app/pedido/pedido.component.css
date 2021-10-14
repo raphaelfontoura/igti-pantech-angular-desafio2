@@ -1,0 +1,25 @@
+.mat-list-base .mat-list-item .mat-line, .summary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+table.mat-table {
+  width: 100%;
+  min-height: 96px;
+}
+
+td.mat-footer-cell {
+  font-weight: 500;
+}
+
+td.mat-cell:last-child, td.mat-footer-cell:last-child {
+  text-align: right;
+}
+
+div.buttons {
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  background-color: lightslategray;
+}

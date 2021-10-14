@@ -1,6 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Pedido } from '../model/pedido';
-import { Produto } from '../model/produto';
 import { PedidoService } from '../services/pedido.service';
 
 @Component({

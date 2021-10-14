@@ -1,0 +1,13 @@
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-list-base .mat-list-item .mat-line {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
