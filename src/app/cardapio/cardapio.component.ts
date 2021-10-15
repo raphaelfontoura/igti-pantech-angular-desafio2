@@ -12,7 +12,6 @@ import { ProdutosService } from '../services/produtos.service';
 export class CardapioComponent implements OnInit {
 
   produtos: Produto[] = [];
-  categorias: string[] = [];
   quantidadeCarrinho = 0;
   total = 0;
 
@@ -24,7 +23,6 @@ export class CardapioComponent implements OnInit {
       this.produtos = produtos;
       this.quantidadeCarrinho = this.pedidoService.getQuantidadeTotal();
       this.total = this.pedidoService.getTotal();
-      this.getCategorias();
     })
   }
 
@@ -32,18 +30,6 @@ export class CardapioComponent implements OnInit {
     this.pedidoService.adicionaItemPedido(produto);
     this.quantidadeCarrinho = this.pedidoService.getQuantidadeTotal();
     this.total = this.pedidoService.getTotal();
-  }
-
-  getCategorias() {
-    this.produtos.forEach(p => {
-      if (!this.categorias.includes(p.categoria)) {
-        this.categorias.push(p.categoria);
-      }
-    })
-  }
-
-  getProdutosPorCategoria(categoria: string) {
-    return this.produtos.filter(p => p.categoria === categoria);
   }
 
 }

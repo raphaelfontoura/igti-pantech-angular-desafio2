@@ -15,21 +15,26 @@
           <a mat-button routerLink="/pedido"> Ver Pedido </a>
         </li>
         <li>
-          <span>R$ {{total | number:"1.2-2"}}</span>
+          <span>{{total | currency:"BRL"}}</span>
         </li>
       </ul>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
 <mat-list>
-  <ng-container *ngFor="let categoria of categorias">
-    <div mat-subheader> {{categoria}} </div>
-    <mat-list-item *ngFor="let produto of getProdutosPorCategoria(categoria)" (click)="adicionaPedido(produto)">
+  <ng-container *ngFor="let produto of produtos, let i = index">
+    <ng-container *ngIf="i === 0 || produto.categoria !== produtos[i-1].categoria ">
+      <mat-divider></mat-divider>
+      <div mat-subheader>
+        <strong class="accent-color">{{ produto.categoria }}</strong>
+      </div>
+    </ng-container>
+    <mat-list-item (click)="adicionaPedido(produto)">
       <div mat-line>
         <span>{{produto.descricao}}</span>
-        <span>R$ {{produto.preco | number: "1.2-2"}}</span>
+        <span> {{produto.preco | currency:"BRL"}}</span>
       </div>
     </mat-list-item>
-    <mat-divider></mat-divider>
+
   </ng-container>
 </mat-list>

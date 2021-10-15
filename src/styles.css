@@ -2,18 +2,27 @@
 html {
   background-color: lightgrey;
 }
+
 html, body { height: 100%; }
+
 body { 
   margin: 0; 
   font-family: Roboto, "Helvetica Neue", sans-serif;
   max-width: 600px;
   margin: auto;
 }
+
 div.container{
   background-color: whitesmoke;
 }
+
 div.headerFixed {
   top: 0;
   position: sticky;
   z-index: 10;
+}
+
+.accent-color {
+  color: #871F78 !important;
+  font-size: 1.15em;
 }
