@@ -1,28 +1,29 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Cardápio</span>
-    <span class="example-spacer"></span>
-  </mat-toolbar-row>
-  <mat-toolbar-row>
-    <ul>
-      <li>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon [matBadge]="quantidadeCarrinho" matBadgeColor="accent"> shopping_cart</mat-icon>
-        </button>
-      </li>
-      <li>
-        <a mat-button routerLink="/pedido"> Ver Pedido </a>
-      </li>
-      <li>
-        <span>R$ {{total | number:"1.2-2"}}</span>
-      </li>
-    </ul>
-  </mat-toolbar-row>
-</mat-toolbar>
-
+<div class="headerFixed">
+  <mat-toolbar color="primary" role="heading" class="mat-elevation-z4">
+    <mat-toolbar-row>
+      <span>Cardápio</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <ul>
+        <li>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon [matBadge]="quantidadeCarrinho" matBadgeColor="accent"> shopping_cart</mat-icon>
+          </button>
+        </li>
+        <li>
+          <a mat-button routerLink="/pedido"> Ver Pedido </a>
+        </li>
+        <li>
+          <span>R$ {{total | number:"1.2-2"}}</span>
+        </li>
+      </ul>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
 <mat-list>
   <ng-container *ngFor="let categoria of categorias">
-    <div mat-subheader > {{categoria}} </div>
+    <div mat-subheader> {{categoria}} </div>
     <mat-list-item *ngFor="let produto of getProdutosPorCategoria(categoria)" (click)="adicionaPedido(produto)">
       <div mat-line>
         <span>{{produto.descricao}}</span>

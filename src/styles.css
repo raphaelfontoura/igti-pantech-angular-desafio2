@@ -12,3 +12,8 @@ body {
 div.container{
   background-color: whitesmoke;
 }
+div.headerFixed {
+  top: 0;
+  position: sticky;
+  z-index: 10;
+}
