@@ -7,19 +7,16 @@
 <table mat-table [dataSource]="pedidos">
   <!-- Item Column -->
   <ng-container matColumnDef="item">
-    <!-- <th mat-header-cell *matHeaderCellDef> Item </th> -->
     <td mat-cell *matCellDef="let pedido"> {{pedido.item.descricao}} </td>
     <td mat-footer-cell *matFooterCellDef> Total </td>
   </ng-container>
 
   <!-- Cost Column -->
   <ng-container matColumnDef="valor">
-    <!-- <th mat-header-cell *matHeaderCellDef> Valor </th> -->
     <td mat-cell *matCellDef="let pedido">{{pedido.quantidade}}x R${{pedido.item.preco | number:"1.2-2"}} </td>
     <td mat-footer-cell *matFooterCellDef> R${{total | number:"1.2-2"}} </td>
   </ng-container>
 
-  <!-- <tr mat-header-row *matHeaderRowDef="['item','valor']"></tr> -->
   <tr mat-row *matRowDef="let row; columns: ['item', 'valor'];"></tr>
   <tr mat-footer-row *matFooterRowDef="['item','valor']"></tr>
 </table>
